@@ -1,0 +1,29 @@
+[build-system]
+requires = ['setuptools>=68']
+build-backend = 'setuptools.build_meta'
+
+[project]
+name = 'flimkit-mufle'
+version = '0.1.0'
+description = 'Spectral-temporal (MuFLE-style) fluorescence unmixing plugin for FLIMKit'
+readme = 'README.md'
+requires-python = '>=3.12'
+license = 'MIT'
+authors = [
+    {name = 'Alex Hunt', email = 'alexander.hunt@ed.ac.uk'},
+]
+keywords = ['FLIM', 'fluorescence', 'lifetime', 'spectral', 'unmixing', 'MuFLE']
+dependencies = [
+    'numpy',
+    'scipy>=1.8',
+]
+
+[project.optional-dependencies]
+gui = ['matplotlib']
+test = ['pytest']
+
+[project.entry-points.'flimkit.plugins']
+flimkit_mufle = 'flimkit_mufle'
+
+[tool.setuptools.packages.find]
+include = ['flimkit_mufle*']
